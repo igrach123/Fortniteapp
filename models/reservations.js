@@ -10,18 +10,18 @@ const reservationSchema = new Schema({
 		time: {
 			type: Number,
 			required: true,
-		},
-		console: {
-			type: Number,
-			required: true,
-		},
-		room: {
-			type: Number,
-			require: true,
-		},
-		game: {
-			type: String,
-			required: false,
+			console: {
+				type: Number,
+				required: true,
+			},
+			room: {
+				type: Number,
+				require: true,
+			},
+			game: {
+				type: String,
+				required: false,
+			},
 		},
 	},
 });

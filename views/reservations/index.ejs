@@ -36,44 +36,45 @@
 			</div>
 			<!-- Modal -->
 			<div class="row" id="myDIV">
-				<% if (blogs.length> 0) { %> <% blogs.forEach(blog=> { %>
-				<div class="text-center d-flex" id="game-card-wrapper">
-					<div class="card card-1">
-						<a href="/blogs/<%= blog._id %> ">
-							<img
-								src="/img/games/thumbs/<%= blog.img %>"
-								class="game-img img-fluid"
-								alt="<%= blog.img %> "
-							/>
-						</a>
+				<div class="row" id="myDIV">
+					<% if (reservations.length> 0) { %> <%
+					reservations.forEach(reservation => { %>
+					<div class="text-center d-flex" id="reservation-card-wrapper">
+						<div class="card card-1">
+							<a href="/reservations/<%= reservation._id %> "> <%= reservation._id %>  </a>
 
-						<div class="card-body">
-							<h5 class="card-title"><%= blog.title%></h5>
-							<p><%= blog.snippet %></p>
-							<p><%= blog.multiblog %></p>
-							<p class="console"><%= blog.console %></p>
+							<div class="card-body">
+						
 
-							<a href="/blogs/<%= blog._id %> " class="btn btn-primary"
-								><i class="fa fa-info" aria-hidden="true"></i
-							></a>
+								<p class="console"><%= reservation.console %></p>
+								<p class="game"><%= reservation.game %></p>
 
-							<a href="/updateblog/<%= blog._id %>"
-								><button class="btn btn-success">
-									<i class="fa fa-cloud-upload" aria-hidden="true"></i></button
-							></a>
+								<a href="/reservations/<%= reservation._id %> " class="btn btn-primary"
+									><i class="fa fa-info" aria-hidden="true"></i>
+								></a>
+
+								<a href="/updatereservation/<%= reservation._id %>"
+									><button class="btn btn-success">
+										<i
+											class="fa fa-cloud-upload"
+											aria-hidden="true"
+										></i></button>
+								</a>
+							</div>
 						</div>
 					</div>
+
+					<% }) %> <% } else { %>
+					<p>There are no blogs to display...</p>
+					<% } %>
 				</div>
 
-				<% }) %> <% } else { %>
-				<p>There are no blogs to display...</p>
-				<% } %>
-			</div>
+				
 		</div>
 
 		<%- include("../partials/footer.ejs") %>
 
-		<script>
+	/* 	<script>
 			const trashcan = document.querySelector("a.deleteblog");
 			trashcan.addEventListener("click", (e) => {
 				const endpoint = `/blogs/${trashcan.dataset.doc}`;
@@ -84,9 +85,9 @@
 					.then((data) => (window.location.href = data.redirect))
 					.catch((err) => console.log(err));
 			});
-		</script>
+		</script> */
 
-		<script>
+	/* 	<script>
 			const items = document.querySelectorAll(".console");
 			console.log(items);
 
@@ -103,9 +104,9 @@
 					item.parentElement.classList.add("switch");
 				}
 			});
-		</script>
+		</script> */
 
-		<script>
+	/* 	<script>
 			$(document).ready(function () {
 				$("#searchbox-input").on("keyup", function () {
 					var value = $(this).val().toLowerCase();
@@ -114,6 +115,6 @@
 					});
 				});
 			});
-		</script>
+		</script> */
 	</body>
 </html>

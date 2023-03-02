@@ -18,30 +18,31 @@ const basic = auth.basic(
 
 const app = express();
 
-router.get("/reservations", function (req, res) {
+router.get("/reservations", (req, res) => {
 	res.locals.moment = moment;
-	var player = {}; //Create Empty player Object
-	var blogs = {}; //Create Empty games&blogs Object
-	var vendors = {}; //Create Empty vendor Objext
-	var reservations = {}; //Create Empty reservation Objext
-
-	Game.find({}, function (err, allVendors) {
-		if (err) {
-			console.log(err);
-		} else {
-			blogs = allVendors;
-			//find order collection and passing it to ejs templates
+	const id = req.params.id;
+	Reservation.find()
+		.then((result) => {
 			res.render("reservations/index", {
-				blogs: blogs,
-				reservation: reservations,
+				reservations: result,
 				title: "Reservations",
 			});
-		}
-	});
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
 
 router.post("/reservations", (req, res) => {
-	const reservation = new Reservation(req.body);
+	console.log(req.body);
+	const reservation = new Reservation({
+		date: req.body.date,
+		time: req.body.time,
+		console: req.body.console,
+		room: req.body.room,
+		game: req.body.game,
+	});
+
 	//add a embeded value!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	/*  player.sub.test = req.body.test; */
 	reservation
