@@ -1,133 +1,150 @@
 <html lang="en">
-<%- include("../partials/head.ejs") %>
+  <%- include("../partials/head.ejs") %>
 
-  <body>
-    <%- include("../partials/nav.ejs") %>
-   <!--  create a new player -->
-   <div class="container-fluid fn-header">
-    
-    <h1 class="text-center"> <img src="img/games/logogr.png" alt="gameroom logo" width="150px"> 
-      <img src="img/games/fn.png" alt="gameroom logo" width="600px">
-        <img src="img/games/logogr.png" alt="gameroom logo" width="150px"> <br>
-    </h1>
-   </div>
-     <div class="container-fluid" id="fortnite-home">
-      <div class="container text-center" >
-      
-        <div class="players-home-form">
-          <form class="form-inline" action="/players" method="GET">
-            <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit">Search</button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-            </button>
-              <!-- sting this shit -->
-         
-              <a class="refresh btn btn-warning"  data-doc="delete">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </a> 
-            <span class="timetr"> <%= moment().format( 'DD-MMM-YYYY' )%>  </span>
-          </form>
+    <body>
+      <%- include("../partials/nav.ejs") %>
+        <!--  create a new player -->
+        <div class="container-fluid fn-header">
 
-             
-         
-      
+          <h1 class="text-center"> <img src="img/games/logogr.png" alt="gameroom logo" width="150px" class="img-fluid">
+            <img src="img/games/fn.png" alt="gameroom logo" width="" class="img-fluid">
+            <img src="img/games/logogr.png" alt="gameroom logo" width="150px"> <br>
+          </h1>
         </div>
-          <!-- Modal -->
-          <%- include("../partials/newplayermodal.ejs") %>
-        <!-- end  create a new player -->
+        <div class="container-fluid" id="fortnite-home">
+          <div class="container text-center">
 
-        <div class="row">
-          <div class="col-sm-6 ul-wrapper">
-            <ul class="list-group">
+            <div class="players-home-form">
+              <form class="form-inline" action="/players" method="GET">
+                <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search"> <br>
+                <button class="btn btn-outline-success " type="submit">Search</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </button>
+                <!-- sting this shit -->
 
-              
+                <a class="refresh btn btn-warning" data-doc="delete">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                <span class="timetr">
+                  <%= moment().format( 'DD-MMM-YYYY' )%>
+                </span>
+              </form>
 
-              <% if (players.length> 0) { %>
-                <% players.forEach(player=> { %>            
-                    <li class="list-group-item2">
-                      <img src="<%= player.flag %>" class="card-img-top img-thumbnail" style="width: 40px;" alt="<%= player.flag %> ">
-                       <span class="gamertagturnir"><%= player.gamertag %> </span> 
-                      <span><%= player.age %></span>                   
-                              <a href="/fortnitefullupdateplayer/<%= player._id %>"><button class="btn btn-outline-success"><i
-                                    class="fa fa-cloud-upload" aria-hidden="true"></i></button></a>
-                                   
-                      <!--form for updating fortnite score-->    
-                      <form action="/fortniteupdateplayer/<%= player._id%>?_method=POST " method="POST">
-                        
-                        P <input type="number" placeholder="<%= player.tournaments.fortnite.place %> " class="playerplace" name="place" value="<%= player.tournaments.fortnite.place %>  ">
-                        K <input type="number" placeholder="<%= player.tournaments.fortnite.kills %>" class="playerkills" name="kills" value="<%= player.tournaments.fortnite.kills %>  ">
-                        <button class="btn btn-danger score" ><i class="fa  fa-2x fa-crosshairs" aria-hidden="true"></i> </button>
-                        <input name="forscore" type="number" placeholder="Score" class="tf-score invisible" value="<%= player.tournaments.fortnite.forscore %>" >
-                        <span class="endscore"><%= player.tournaments.fortnite.forscore %> </span>
-                        <select name="daily" id="daily" class="isdailyonfn btn-outline-success">
-                          <option value="true">DA</i></option>
-                          <option value="false">NE</i></option>
-                        </select>  
-                      </form>
-                    
-                    </li>
-                        
-                    <% }) %>
-                      <% } else { %>
-                        <p>There are no players to display...</p>
-                        <% } %>
-                      </ul>
-                  </div>
 
-                <div class="offset-sm-1 col-sm-4 extrascorewrapp"> 
-                  
-                  
-                      <% if (players.length> 0) { %>
-                        <% players.forEach(player=> { %>  
-                          
-                       <!--    logic for order nubmer -->
-                          <% 
-                            var index = players.indexOf(player);
-                            var numb = Number(index + 1)
-                  
-                          %>
 
-                          <p class="text-left ">
-                         <span class="h3"> <%= numb  %>.  </span>
-                            <span class="extraname"><%= player.gamertag %></span> <span class="extrascore"><%= player.tournaments.fortnite.forscore %></span> </p>
-                        
-                          
-                      <% }) %>
-                      <% } else { %>
-                        <p>There are no players to display...</p>
-                      <% } %>
-                  
-                    </div>
+
+            </div>
+            <!-- Modal -->
+            <%- include("../partials/newplayermodal.ejs") %>
+              <!-- end  create a new player -->
+
+              <div class="row">
+                <div class="col-sm-6 ul-wrapper">
+                  <ul class="list-group">
+
+
+
+                    <% if (players.length> 0) { %>
+                      <% players.forEach(player=> { %>
+                        <li class="list-group-item2">
+                          <img src="<%= player.flag %>" class="card-img-top img-thumbnail" style="width: 40px;"
+                            alt="<%= player.flag %> ">
+                          <span class="gamertagturnir">
+                            <%= player.gamertag %>
+                          </span>
+                          <span>
+                            <%= player.age %>
+                          </span>
+                          <a href="/fortnitefullupdateplayer/<%= player._id %>"><button
+                              class="btn btn-outline-success"><i class="fa fa-cloud-upload"
+                                aria-hidden="true"></i></button></a>
+
+                          <!--form for updating fortnite score-->
+                          <form action="/fortniteupdateplayer/<%= player._id%>?_method=POST " method="POST">
+
+                            P <input type="number" placeholder="<%= player.tournaments.fortnite.place %> "
+                              class="playerplace" name="place" value="<%= player.tournaments.fortnite.place %>  ">
+                            K <input type="number" placeholder="<%= player.tournaments.fortnite.kills %>"
+                              class="playerkills" name="kills" value="<%= player.tournaments.fortnite.kills %>  ">
+                            <button class="btn btn-danger score"><i class="fa  fa-2x fa-crosshairs"
+                                aria-hidden="true"></i> </button>
+                            <input name="forscore" type="number" placeholder="Score" class="tf-score invisible"
+                              value="<%= player.tournaments.fortnite.forscore %>">
+                            <span class="endscore">
+                              <%= player.tournaments.fortnite.forscore %>
+                            </span>
+                            <select name="daily" id="daily" class="isdailyonfn btn-outline-success">
+                              <option value="true">DA</i></option>
+                              <option value="false">NE</i></option>
+                            </select>
+                          </form>
+
+                        </li>
+
+                        <% }) %>
+                          <% } else { %>
+                            <p>There are no players to display...</p>
+                            <% } %>
+                  </ul>
+                </div>
+
+                <div class="offset-sm-1 col-sm-4 extrascorewrapp">
+
+
+                  <% if (players.length> 0) { %>
+                    <% players.forEach(player=> { %>
+
+                      <!--    logic for order nubmer -->
+                      <% var index=players.indexOf(player); var numb=Number(index + 1) %>
+
+                        <p class="text-left ">
+                          <span class="h3">
+                            <%= numb %>.
+                          </span>
+                          <span class="extraname">
+                            <%= player.gamertag %>
+                          </span> <span class="extrascore">
+                            <%= player.tournaments.fortnite.forscore %>
+                          </span>
+                        </p>
+
+
+                        <% }) %>
+                          <% } else { %>
+                            <p>There are no players to display...</p>
+                            <% } %>
+
+                </div>
+              </div>
           </div>
         </div>
-     </div>
 
 
 
 
         <%- include("../partials/footer.ejs") %>
-        <!-- fortnite js logic -->
-        <%- include("../partials/fortnitelogic.ejs") %>
+          <!-- fortnite js logic -->
+          <%- include("../partials/fortnitelogic.ejs") %>
 
-        <script>
-          const refresh = document.querySelector('.refresh');
-          refresh.addEventListener('click' , (e) => {
-            const endpoint = `/fortniteupdatemany`;
+            <script>
+              const refresh = document.querySelector('.refresh');
+              refresh.addEventListener('click', (e) => {
+                const endpoint = `/fortniteupdatemany`;
 
-            fetch(endpoint , {
-              method: 'PUT' 
-            })
-            .then((response) => response.json())
-            .then((data) => window.location.href = data.redirect)
-            .catch(err => console.log(err));
-          })
-         
-        </script>
+                fetch(endpoint, {
+                  method: 'PUT'
+                })
+                  .then((response) => response.json())
+                  .then((data) => window.location.href = data.redirect)
+                  .catch(err => console.log(err));
+              })
 
-     
-     
+            </script>
 
-  </body>
+
+
+
+    </body>
 
 </html>
