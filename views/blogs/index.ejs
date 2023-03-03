@@ -1,100 +1,100 @@
 <html lang="en">
 	<%- include("../partials/head.ejs") %>
 
-	<body>
-		<%- include("../partials/nav.ejs") %>
+		<body>
+			<%- include("../partials/nav.ejs") %>
 
-		<div class="container-fluid games-home" id="myDIV">
-			<br />
-			<div class="text-center">
-				<input
-					class="col-sm-2"
-					id="searchbox-input"
-					type="text"
-					placeholder="Search.."
-				/>
-			</div>
+				<div class="container-fluid games-home" id="myDIV">
+					<br />
+					<div class="text-center">
+						<input class="col-sm-2" id="searchbox-input" type="text" placeholder="Search.." />
+					</div>
 
-			<br />
-			<div class="row" id="myDIV">
-				<% if (blogs.length> 0) { %> <% blogs.forEach(blog=> { %>
-				<div class="text-center d-flex" id="game-card-wrapper">
-					<div class="card card-1">
-						<a href="/blogs/<%= blog._id %> ">
-							<img
-								src="/img/games/thumbs/<%= blog.img %>"
-								class="game-img img-fluid"
-								alt="<%= blog.img %> "
-							/>
-						</a>
+					<br />
+					<div class="row" id="myDIV">
+						<% if (blogs.length> 0) { %> <% blogs.forEach(blog=> { %>
+								<div class="text-center d-flex img-fluid col-sm-6 col-md-3 col-lg-2"
+									id="game-card-wrapper">
+									<div class="card card-1">
+										<a href="/blogs/<%= blog._id %> ">
+											<img src="/img/games/thumbs/<%= blog.img %>" class="game-img img-fluid"
+												alt="<%= blog.img %> " />
+										</a>
 
-						<div class="card-body">
-							<h5 class="card-title"><%= blog.title%></h5>
-							<p><%= blog.snippet %></p>
-							<p><%= blog.multiblog %></p>
-							<p class="console"><%= blog.console %></p>
+										<div class="card-body">
+											<h5 class="card-title">
+												<%= blog.title%>
+											</h5>
+											<p>
+												<%= blog.snippet %>
+											</p>
+											<p>
+												<%= blog.multiblog %>
+											</p>
+											<p class="console">
+												<%= blog.console %>
+											</p>
 
-							<a href="/blogs/<%= blog._id %> " class="btn btn-primary"
-								><i class="fa fa-info" aria-hidden="true"></i
-							></a>
+											<a href="/blogs/<%= blog._id %> " class="btn btn-primary"><i
+													class="fa fa-info" aria-hidden="true"></i></a>
 
-							<a href="/updateblog/<%= blog._id %>"
-								><button class="btn btn-success">
-									<i class="fa fa-cloud-upload" aria-hidden="true"></i></button
-							></a>
-						</div>
+											<a href="/updateblog/<%= blog._id %>"><button class="btn btn-success">
+													<i class="fa fa-cloud-upload" aria-hidden="true"></i></button></a>
+										</div>
+									</div>
+								</div>
+
+								<% }) %>
+									<% } else { %>
+										<p>There are no blogs to display...</p>
+										<% } %>
 					</div>
 				</div>
 
-				<% }) %> <% } else { %>
-				<p>There are no blogs to display...</p>
-				<% } %>
-			</div>
-		</div>
+				<%- include("../partials/footer.ejs") %>
 
-		<%- include("../partials/footer.ejs") %>
+					<script>
+						const trashcan = document.querySelector("a.deleteblog");
+						trashcan.addEventListener("click", (e) => {
+							const endpoint = `/blogs/${trashcan.dataset.doc}`;
+							fetch(endpoint, {
+								method: "DELETE",
+							})
+								.then((response) => response.json())
+								.then((data) => (window.location.href = data.redirect))
+								.catch((err) => console.log(err));
+						});
+					</script>
 
-		<script>
-			const trashcan = document.querySelector("a.deleteblog");
-			trashcan.addEventListener("click", (e) => {
-				const endpoint = `/blogs/${trashcan.dataset.doc}`;
-				fetch(endpoint, {
-					method: "DELETE",
-				})
-					.then((response) => response.json())
-					.then((data) => (window.location.href = data.redirect))
-					.catch((err) => console.log(err));
-			});
-		</script>
+					<script>
+						const items = document.querySelectorAll(".console");
+						console.log(items);
 
-		<script>
-			const items = document.querySelectorAll(".console");
-			console.log(items);
+						items.forEach((item) => {
+							console.log(item.innerHTML);
 
-			items.forEach((item) => {
-				console.log(item.innerHTML);
+							if (item.innerHTML === "Play Station 5") {
+								item.parentElement.classList.add("ps5");
+							} else if (item.innerHTML === "Play Station 4") {
+								item.parentElement.classList.add("ps5");
+							} else if (item.innerHTML === "Xbox") {
+								item.parentElement.classList.add("xbox");
+							} else {
+								item.parentElement.classList.add("switch");
+							}
+						});
+					</script>
 
-				if (item.innerHTML === "Play Station 5") {
-					item.parentElement.classList.add("ps5");
-				} else if (item.innerHTML === "Play Station 4") {
-					item.parentElement.classList.add("ps5");
-				} else if (item.innerHTML === "Xbox") {
-					item.parentElement.classList.add("xbox");
-				} else {
-					item.parentElement.classList.add("switch");
-				}
-			});
-		</script>
+					<script>
+						$(document).ready(function () {
+							$("#searchbox-input").on("keyup", function () {
+								var value = $(this).val().toLowerCase();
+								$(".card").filter(function () {
+									$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+								});
+							});
+						});
+					</script>
+		</body>
 
-		<script>
-			$(document).ready(function () {
-				$("#searchbox-input").on("keyup", function () {
-					var value = $(this).val().toLowerCase();
-					$(".card").filter(function () {
-						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-					});
-				});
-			});
-		</script>
-	</body>
 </html>

@@ -1,363 +1,372 @@
 .card-1 {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .card-1:hover {
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card-2 {
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .card-3 {
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .card-4 {
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card-5 {
-	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 //botstrap import from node
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 @font-face {
-	font-family: "Burbank Big Cd Bk";
-	src: url("../css/fortnite.otf") format("woff");
+  font-family: "Burbank Big Cd Bk";
+  src: url("../css/fortnite.otf") format("woff");
 }
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 //font import
 body {
-	font-family: "Roboto Condensed", sans-serif;
-	background: #1c92d2; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to bottom,
-		#f2fcfe,
-		#1c92d2
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to bottom,
-		#f2fcfe,
-		#1c92d2
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background-image: url("/img/games/gaming-bg2.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+  font-family: "Roboto Condensed", sans-serif;
+  background: #1c92d2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #f2fcfe,
+    #1c92d2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #f2fcfe,
+    #1c92d2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url("/img/games/gaming-bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 nav {
-	.newuser {
-		display: inline-block;
-		padding-left: 10rem;
-	}
-	background-color: #000000;
-	background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
-	.navbar-nav {
-		padding-bottom: 0;
-		padding-top: 0;
-	}
+  .newuser {
+    display: inline-block;
+    padding-left: 10rem;
+  }
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+  .navbar-nav {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 
-	.container {
-		padding: 0px;
-		margin: 0px;
-	}
+  .container {
+    padding: 0px;
+    margin: 0px;
+  }
 }
 select {
-	border-radius: 5px;
+  border-radius: 5px;
 }
 .card {
-	margin-bottom: 5px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	border: none;
-	.fa {
-		font-size: 0.7rem;
-		pointer-events: none;
-	}
-	.small {
-		margin-bottom: 0;
-		padding-bottom: 0;
-		text-align: center;
-	}
+  margin-bottom: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+  .fa {
+    font-size: 0.7rem;
+    pointer-events: none;
+  }
+  .small {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
 
-	.card-img-top {
-		padding: 5px;
-		width: 40px;
-	}
-	.card-title {
-		text-transform: uppercase;
-		font-size: 20px;
-	}
-	.card-body {
-		padding: 10px;
-	}
-	form {
-		display: inline;
-	}
+  .card-img-top {
+    padding: 5px;
+    width: 40px;
+  }
+  .card-title {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .card-body {
+    padding: 10px;
+  }
+  form {
+    display: inline;
+  }
 }
 
 //players index
 .players-home-form {
-	button,
-	input {
-		margin-right: 10px;
-	}
+  button,
+  input {
+    margin-right: 10px;
+  }
 }
 
 .fa-trash {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 //player detaails page
 .avg {
-	font-size: 30px;
+  font-size: 30px;
 
-	color: #717273;
-	text-align: center;
-	font-weight: 900;
-	letter-spacing: 5px;
+  color: #717273;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 5px;
 }
 
 .details {
-	min-height: 355px;
-	display: inline-block;
+  min-height: 355px;
+  display: inline-block;
 }
 
 .scorewrapper {
-	text-align: left;
-	width: 400px;
-	float: left;
-	padding: 25px;
+  text-align: left;
+  width: 400px;
+  float: left;
+  padding: 25px;
 }
 .score-single {
-	img {
-		width: 80px;
-		vertical-align: middle;
-	}
-	text-align: center;
+  img {
+    width: 80px;
+    vertical-align: middle;
+  }
+  text-align: center;
 }
 
 //fortnite page
 .players-home-form {
-	margin: 0 auto;
-	.form-inline {
-		margin-left: 25%;
-	}
+  margin: 0 auto;
+  .form-inline {
+    margin-left: 25%;
+  }
 }
 .fn-header {
-	background-color: #ffd300;
-	h1 {
-		margin-bottom: 0;
-		padding-bottom: 20px;
-		padding-top: 10px;
-	}
+  background-color: #ffd300;
+  h1 {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
 }
 
 #fortnite-home {
-	padding-top: 10px;
-	background-image: url("../img/games/fortnite-bg-blur.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 80%;
+  padding-top: 10px;
+  background-image: url("../img/games/fortnite-bg-blur.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80%;
 
-	.timetr {
-		font-size: 1.4rem;
-		text-align: left;
-		background-color: #4c51f7;
-		letter-spacing: 5px;
-		font-family: "Burbank Big Cd Bk";
-		margin-left: 50px;
-		color: #ffffff;
-	}
+  .timetr {
+    font-size: 1.4rem;
+    text-align: left;
+    background-color: #4c51f7;
+    letter-spacing: 5px;
+    font-family: "Burbank Big Cd Bk";
+    margin-left: 50px;
+    color: #ffffff;
+  }
 
-	.fa {
-		font-size: 1.5rem;
+  .fa {
+    font-size: 1.5rem;
 
-		pointer-events: none;
-	}
+    pointer-events: none;
+  }
 
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	.score-span {
-		font-size: 2.3rem;
-		font-weight: 900;
-		color: lightgray;
-		text-align: left;
-		text-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-	}
-	.playerplace,
-	.playerkills,
-	.tf-score {
-		width: 50px;
-		border-radius: 5px;
-		border-color: #f3f3f3;
-	}
-	.list-group-item2 {
-		border: none;
-		background-color: white;
-		border-radius: 5px;
-		list-style-type: none;
-		padding: 0;
-		margin-bottom: 5px;
-		text-align: left;
-		.gamertagturnir {
-			width: 80px;
-			display: inline-block;
-			font-weight: 600;
-		}
-		form {
-			display: inline-block;
-			padding-bottom: 0;
-			margin-bottom: 0;
-		}
-		img {
-			margin-left: 5px;
-		}
-		.endscore {
-			display: inline-block;
-			font-size: 1.5rem;
-			color: blueviolet;
-			font-weight: 900;
-		}
-		.isdailyonfn {
-			font-size: 1rem;
-			border-radius: 5px;
-			padding: 2px;
-			margin-top: 3px;
-		}
-	}
+  .score-span {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: lightgray;
+    text-align: left;
+    text-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+  .playerplace,
+  .playerkills,
+  .tf-score {
+    width: 50px;
+    border-radius: 5px;
+    border-color: #f3f3f3;
+  }
+  .list-group-item2 {
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 5px;
+    text-align: left;
+    .gamertagturnir {
+      width: 80px;
+      display: inline-block;
+      font-weight: 600;
+    }
+    form {
+      display: inline-block;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    img {
+      margin-left: 5px;
+    }
+    .endscore {
+      display: inline-block;
+      font-size: 1.5rem;
+      color: blueviolet;
+      font-weight: 900;
+    }
+    .isdailyonfn {
+      font-size: 1rem;
+      border-radius: 5px;
+      padding: 2px;
+      margin-top: 3px;
+    }
+  }
 }
 .extrascorewrapp {
-	font-family: "Burbank Big Cd Bk";
-	p {
-		color: #ffffff;
-		text-transform: uppercase;
-		padding: 0;
-		margin: 0;
-		margin-bottom: 0px;
-		line-height: 1;
-	}
-	span.extraname {
-		font-weight: 900;
-		font-size: 2rem;
-		letter-spacing: 3px;
-		background-color: #4c51f7;
-		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-	}
-	.extrascore {
-		font-size: 2.2rem;
-		color: blueviolet;
-		font-weight: 900;
-		margin-left: 30px;
-		text-align: right !important;
-		background-color: #f2fcfe;
-	}
+  font-family: "Burbank Big Cd Bk";
+  p {
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0px;
+    line-height: 1;
+  }
+  span.extraname {
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    background-color: #4c51f7;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .extrascore {
+    font-size: 2.2rem;
+    color: blueviolet;
+    font-weight: 900;
+    margin-left: 30px;
+    text-align: right !important;
+    background-color: #f2fcfe;
+  }
 }
 
 #game-card-wrapper {
-	color: #ffffff;
-	max-width: 12.3%;
-	margin-left: 0.1%;
-	margin-right: 0.1%;
+  color: #ffffff;
+}
+.card {
+  width: 100%;
 }
 .card-body {
-	padding: 5px;
+  padding: 10px;
 }
 .ps5 {
-	background-color: #003791;
+  background-color: #003791;
 }
 .xbox {
-	background-color: #0e7a0d;
+  background-color: #0e7a0d;
 }
 .switch {
-	background-color: #e60012;
+  background-color: #e60012;
 }
 .ps5,
 .xbox,
 .switch {
-	color: #f2fcfe;
-	.card-title {
-		font-weight: 700;
-		word-break: break-word;
-	}
-	.console {
-		margin-bottom: 5px;
-	}
+  color: #f2fcfe;
+  .card-title {
+    font-weight: 700;
+    word-break: break-word;
+  }
+  .console {
+    margin-bottom: 5px;
+  }
 }
 .create-game {
-	.form-group {
-		label {
-			color: white;
-		}
-	}
+  .form-group {
+    label {
+      color: white;
+    }
+  }
 }
 
 .game-details {
-	.details-content {
-		margin-left: 15px;
-	}
-	p {
-		color: #f2fcfe;
-	}
+  .details-content {
+    margin-left: 15px;
+  }
+  p {
+    color: #f2fcfe;
+  }
 
-	h1 {
-		text-align: center;
-		font-weight: 900;
-		margin-top: 20px;
-	}
+  h1 {
+    text-align: center;
+    font-weight: 900;
+    margin-top: 20px;
+  }
 }
 .game-details-h1 {
-	color: #ffffff;
+  color: #ffffff;
 }
 .top50wrapper {
-	h1 {
-		background-color: #ffd300;
-		font-family: "Burbank Big Cd Bk";
-		font-size: 3rem;
-	}
-	p {
-		float: left;
-		width: 45%;
-	}
+  h1 {
+    background-color: #ffd300;
+    font-family: "Burbank Big Cd Bk";
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) {
+    p {
+      float: left;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    p {
+      float: left;
+      width: 45%;
+    }
+  }
 }
 
 .top50 {
-	font-family: "Burbank Big Cd Bk";
-	p {
-		color: white;
-		text-transform: uppercase;
-		padding: 2;
-		margin: 2;
+  font-family: "Burbank Big Cd Bk";
+  p {
+    color: white;
+    text-transform: uppercase;
+    padding: 2;
+    margin: 2;
 
-		border-radius: 5px;
-	}
-	span {
-		padding: 1px;
-	}
-	span.extraname {
-		letter-spacing: 4px;
-		font-weight: 750;
-		font-size: 1.7rem;
-		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-	}
-	.extrascore {
-		font-size: 1.8rem;
-		font-weight: 900;
-		margin-left: 10px;
-		color: #f3af19;
-		margin-right: 5px;
-	}
+    border-radius: 5px;
+  }
+  span {
+    padding: 1px;
+  }
+  span.extraname {
+    letter-spacing: 4px;
+    font-weight: 750;
+    font-size: 1.7rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .extrascore {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-left: 10px;
+    color: #f3af19;
+    margin-right: 5px;
+  }
 
-	.playedat {
-		font-family: "Roboto-slab";
-		font-size: 0.8rem;
-		span {
-			margin-left: 2px;
-			margin-right: 2px;
-			background-color: rgb(58, 88, 238);
-		}
-	}
-	padding: 0px;
+  .playedat {
+    font-family: "Roboto-slab";
+    font-size: 0.8rem;
+    span {
+      margin-left: 2px;
+      margin-right: 2px;
+      background-color: rgb(58, 88, 238);
+    }
+  }
+  padding: 0px;
 }
