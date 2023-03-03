@@ -4,7 +4,8 @@
   "description": "my game room",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node index.js",
+    "build": "npm i"
   },
   "author": "Igor Brajković",
   "license": "ISC",
